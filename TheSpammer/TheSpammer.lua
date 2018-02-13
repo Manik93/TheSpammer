@@ -45,6 +45,15 @@ function autospamwithtimestop()
     rrecounter = 0
 end
     
+function lfgMessage (name)
+
+    for i=1, 10 do id, chName = GetChannelName(i) 
+        if (chName == name) then 
+            autospamchannel = id; break
+        end 
+    end
+
+end
 
 function logicFunc(autospamchannel, autowhisperspam, autospamtext, rrecounter)
     if (autospamchannel>0) and (autowhisperspam=="") and not (autospamtext=="") then 
@@ -77,7 +86,6 @@ function logicFunc(autospamchannel, autowhisperspam, autospamtext, rrecounter)
     end
 end
 
-
 timestampautospam = time();
 rrecounter = 0
 
@@ -88,6 +96,7 @@ function autospamwithtime_callback()
     spamcheck_1 = spamcheck1:GetChecked();
     spamcheck_2 = spamcheck2:GetChecked();
     spamcheck_3 = spamcheck3:GetChecked();
+    lfg = lfgSpam:GetChecked();
     autopamwaittime = spamwaittime:GetNumber();
     autospamrecurrences = spamrecurrences:GetNumber();
     autospamchannel = spamchannel:GetNumber();
@@ -98,8 +107,12 @@ function autospamwithtime_callback()
         autospamrecurrences = 999999999999999   
     end
 
-
     if (currentautospam_time - timestampautospam > (autopamwaittime)) and (autospamrecurrences > (rrecounter)) then
+        
+        if (lfg) then
+            lfgMessage("Поиск спутников")
+        end
+        
         if (spamcheck_1) then
             logicFunc(autospamchannel, autowhisperspam, autospamtext_1, rrecounter) end
         if (spamcheck_2) then
