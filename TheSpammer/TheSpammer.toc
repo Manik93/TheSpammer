@@ -1,0 +1,13 @@
+## Interface: 20400
+## Title: |cffFF4500The |cff404040Spammer
+## Author: H3llf!re
+## Version: 1
+## Notes: |cffFF4500 Ingame WoW Spam Bot! by|cff404040 H3llf!re |cff6495ED v.1
+## eMail: WrathoftheGlitchKing@googlemail.com
+## URL: Deathsoft.com
+## DefaultState: Enabled
+## LoadOnDemand: 0
+TheSpammer.lua
+TheSpammer.xml
+TheSpammerMenu.xml
+Dummy.xml
