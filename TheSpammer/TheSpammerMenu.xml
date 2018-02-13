@@ -5,7 +5,7 @@
 
 <!--Главный фрейм-->
   <Frame name="TheSpammer" hidden="true" enableMouse="true">
-    <Size x="390" y="313"/>
+    <Size x="390" y="330"/>
     <TitleRegion>
       <Size x="100" y="20"/>
       <Anchors>
@@ -62,7 +62,7 @@
       <EditBox name="spamtext1" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="255">
         <Size x="310" y="25"/>
         <Anchors>
-          <Anchor point="TOPLEFT" x="55" y="-171" />
+          <Anchor point="TOPLEFT" x="55" y="-190" />
         </Anchors>
         <FontString font="Fonts\ARIALN.TTF">
           <FontHeight val="14"/>
@@ -80,7 +80,7 @@
 <!--Переключатель "Сообщение 1"-->
       <CheckButton name="spamcheck1" inherits="OptionsCheckButtonTemplate" checked="false">
 	      <Anchors>
-		      <Anchor point="TOPLEFT" x="19" y="-172"/>
+		      <Anchor point="TOPLEFT" x="19" y="-191"/>
         </Anchors>
       </CheckButton>
 
@@ -88,7 +88,7 @@
       <EditBox name="spamtext2" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="255">
         <Size x="310" y="25"/>
         <Anchors>
-          <Anchor point="TOPLEFT" x="55" y="-199" />
+          <Anchor point="TOPLEFT" x="55" y="-218" />
         </Anchors>
         <FontString font="Fonts\ARIALN.TTF">
           <FontHeight val="14"/>
@@ -106,7 +106,7 @@
 <!--Переключатель "Сообщение 2"-->
       <CheckButton name="spamcheck2" inherits="OptionsCheckButtonTemplate" checked="false">
 	      <Anchors>
-		      <Anchor point="TOPLEFT" x="19" y="-200"/>
+		      <Anchor point="TOPLEFT" x="19" y="-219"/>
         </Anchors>
       </CheckButton>
 
@@ -114,7 +114,7 @@
       <EditBox name="spamtext3" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="255">
         <Size x="310" y="25"/>
         <Anchors>
-          <Anchor point="TOPLEFT" x="55" y="-227" />
+          <Anchor point="TOPLEFT" x="55" y="-246" />
         </Anchors>
         <FontString font="Fonts\ARIALN.TTF">
           <FontHeight val="14"/>
@@ -132,7 +132,7 @@
 <!--Переключатель "Сообщение 3"-->
       <CheckButton name="spamcheck3" inherits="OptionsCheckButtonTemplate" checked="false">
 	      <Anchors>
-		      <Anchor point="TOPLEFT" x="19" y="-228"/>
+		      <Anchor point="TOPLEFT" x="19" y="-247"/>
         </Anchors>
       </CheckButton>
 
@@ -180,7 +180,7 @@
       <Frame name="$parentComponent1">
         <Size x="341" y="19" />
         <Anchors>
-          <Anchor point="TOPLEFT" x="24" y="-154" />
+          <Anchor point="TOPLEFT" x="24" y="-172" />
         </Anchors>
         <Layers>
           <Layer>
@@ -204,7 +204,7 @@
       <Button name="$parentComponent10" inherits="UIPanelButtonTemplate" text="СПАМ!">
         <Size x="76" y="25" />
         <Anchors>
-          <Anchor point="TOPLEFT" x="210" y="-265" />
+          <Anchor point="TOPLEFT" x="210" y="-281" />
         </Anchors>
         <Scripts>
           <OnClick>
@@ -322,7 +322,7 @@
       <Button name="$parentComponent4" inherits="UIPanelButtonTemplate" text="STOP">
         <Size x="76" y="25" />
         <Anchors>
-          <Anchor point="TOPLEFT" x="289" y="-265" />
+          <Anchor point="TOPLEFT" x="289" y="-281" />
         </Anchors>
         <Scripts>
           <OnClick>
@@ -367,6 +367,37 @@
               <Anchors>
                 <Anchor point="TOPLEFT" x="9" y="0"/>
                 <Anchor point="BOTTOMRIGHT" x="9" y="0"/>
+              </Anchors>
+              <FontHeight val="12" />
+              <Color r="1" g="0.8196079" b="0" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset x="1" y="-1" />
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+
+<!--Переключатель "LFG"-->
+      <CheckButton name="lfgSpam" inherits="OptionsCheckButtonTemplate" checked="false">
+	      <Anchors>
+		      <Anchor point="TOPLEFT" x="125" y="-146"/>
+        </Anchors>
+      </CheckButton>
+
+<!--Текст "LFG"-->
+      <Frame name="lfgText">
+        <Size x="103" y="25" />
+        <Anchors>
+          <Anchor point="TOPLEFT" x="60" y="-146" />
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString font="Fonts\FRIZQT__.TTF" text="LFG:">
+              <Anchors>
+                <Anchor point="TOPLEFT" />
+                <Anchor point="BOTTOMRIGHT" />
               </Anchors>
               <FontHeight val="12" />
               <Color r="1" g="0.8196079" b="0" />
