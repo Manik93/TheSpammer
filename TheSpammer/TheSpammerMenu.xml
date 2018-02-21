@@ -5,7 +5,7 @@
 
 <!--Главный фрейм-->
   <Frame name="TheSpammer" hidden="true" enableMouse="true">
-    <Size x="390" y="330"/>
+    <Size x="390" y="327"/>
     <TitleRegion>
       <Size x="100" y="20"/>
       <Anchors>
@@ -58,105 +58,35 @@
     </Layers>
     <Frames>
 
-<!--Поле "Текст сообщения 1"-->
-      <EditBox name="spamtext1" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="255">
-        <Size x="310" y="25"/>
+<!--Текст описание-->
+      <Frame name="$parentComponent3">
+        <Size x="341" y="36" />
         <Anchors>
-          <Anchor point="TOPLEFT" x="55" y="-190" />
+          <Anchor point="TOPLEFT" x="24" y="-35" />
         </Anchors>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight val="14"/>
-          <Anchors>
-            <Anchor point="TOPLEFT" relativeTo="$parentLeft" x="10" y="10"/>
-          </Anchors>
-          <Color r="1" g="1" b="1"/>
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset x="1" y="-1"/>
-          </Shadow>
-        </FontString>
-      </EditBox>
-
-<!--Переключатель "Сообщение 1"-->
-      <CheckButton name="spamcheck1" inherits="OptionsCheckButtonTemplate" checked="false">
-	      <Anchors>
-		      <Anchor point="TOPLEFT" x="19" y="-191"/>
-        </Anchors>
-      </CheckButton>
-
-<!--Поле "Текст сообщения 2"-->
-      <EditBox name="spamtext2" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="255">
-        <Size x="310" y="25"/>
-        <Anchors>
-          <Anchor point="TOPLEFT" x="55" y="-218" />
-        </Anchors>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight val="14"/>
-          <Anchors>
-            <Anchor point="TOPLEFT" relativeTo="$parentLeft" x="10" y="10"/>
-          </Anchors>
-          <Color r="1" g="1" b="1"/>
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset x="1" y="-1"/>
-          </Shadow>
-        </FontString>
-      </EditBox>
-
-<!--Переключатель "Сообщение 2"-->
-      <CheckButton name="spamcheck2" inherits="OptionsCheckButtonTemplate" checked="false">
-	      <Anchors>
-		      <Anchor point="TOPLEFT" x="19" y="-219"/>
-        </Anchors>
-      </CheckButton>
-
-<!--Поле "Текст сообщения 3"-->
-      <EditBox name="spamtext3" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="255">
-        <Size x="310" y="25"/>
-        <Anchors>
-          <Anchor point="TOPLEFT" x="55" y="-246" />
-        </Anchors>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight val="14"/>
-          <Anchors>
-            <Anchor point="TOPLEFT" relativeTo="$parentLeft" x="10" y="10"/>
-          </Anchors>
-          <Color r="1" g="1" b="1"/>
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset x="1" y="-1"/>
-          </Shadow>
-        </FontString>
-      </EditBox>
-
-<!--Переключатель "Сообщение 3"-->
-      <CheckButton name="spamcheck3" inherits="OptionsCheckButtonTemplate" checked="false">
-	      <Anchors>
-		      <Anchor point="TOPLEFT" x="19" y="-247"/>
-        </Anchors>
-      </CheckButton>
-
-<!--Поле "Задержка"-->
-      <EditBox name="spamwaittime" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" numeric="true" letters="9">
-        <Size x="68" y="25"/>
-        <Anchors>
-          <Anchor point="TOPLEFT" x="134" y="-92" />
-        </Anchors>
-        <FontString font="Fonts\ARIALN.TTF">    
-          <FontHeight val="14" />
-          <Color r="1" g="1" b="1" />
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset x="1" y="-1" />
-          </Shadow>
-        </FontString>
-      </EditBox>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="Автоматически отправляет сообщения в выбраный канал, /s или в ЛС. Оставьте поле &quot;№ канала:&quot; пустым, чтобы писать в /s чат.">
+              <Anchors>
+                <Anchor point="TOPLEFT" />
+                <Anchor point="BOTTOMRIGHT" />
+              </Anchors>
+              <FontHeight val="12" />
+              <Color r="1" g="0.8196079" b="0" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset x="1" y="-1" />
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
 
 <!--Текст "Задержка"-->
       <Frame name="$parentLabel1">
         <Size x="103" y="25" />
         <Anchors>
-          <Anchor point="TOPLEFT" x="20" y="-92" />
+          <Anchor point="TOPLEFT" x="19" y="-84" />
         </Anchors>
         <Layers>
           <Layer>
@@ -175,6 +105,186 @@
           </Layer>
         </Layers>
       </Frame>
+
+<!--Поле "Задержка"-->
+      <EditBox name="spamwaittime" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" numeric="true" letters="9">
+        <Size x="68" y="25"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" x="133" y="-84" />
+        </Anchors>
+        <FontString font="Fonts\ARIALN.TTF">    
+          <FontHeight val="14" />
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset x="1" y="-1" />
+          </Shadow>
+        </FontString>
+      </EditBox>
+
+<!--Текст "Повторения"-->
+      <Frame name="$parentComponent2">
+        <Size x="80" y="25" />
+        <Anchors>
+          <Anchor point="TOPLEFT" x="204" y="-84" />
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" inherits="GameFontNormal" font="Fonts\FRIZQT__.TTF" text="Повторения:">
+              <Anchors>
+                <Anchor point="TOPLEFT" x="0" y="0"/>
+                <Anchor point="BOTTOMRIGHT" x="0" y="0"/>
+              </Anchors>
+              <FontHeight val="12" />
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+
+<!--Поле "Повторения"-->
+      <EditBox name="spamrecurrences" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" numeric="true" letters="9">
+        <Size x="68" y="25"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" x="293" y="-84" />
+        </Anchors>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight val="14" />
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset x="1" y="-1" />
+          </Shadow>
+        </FontString>
+      </EditBox>
+
+<!--Текст "№ канала"-->
+      <Frame name="$parentComponent5">
+        <Size x="103" y="25" />
+        <Anchors>
+          <Anchor point="TOPLEFT" x="42" y="-111" />
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="№ канала:">
+              <Anchors>
+                <Anchor point="TOPLEFT" />
+                <Anchor point="BOTTOMRIGHT" />
+              </Anchors>
+              <FontHeight val="12" />
+              <Color r="1" g="0.8196079" b="0" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset x="1" y="-1" />
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+
+<!--Поле "№ канала"-->
+      <EditBox name="spamchannel"  inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" numeric="true" letters="9">
+        <Size x="68" y="25" />
+        <Anchors>
+          <Anchor point="TOPLEFT" x="134" y="-111" />
+        </Anchors>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight val="14" />
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset x="1" y="-1" />
+          </Shadow>
+        </FontString>
+      </EditBox>
+
+<!--Поле "Шепнуть"-->
+      <EditBox name="whisperspam" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="12">
+        <Size x="68" y="25" />
+        <Anchors>
+          <Anchor point="TOPLEFT" x="293" y="-111" />
+        </Anchors>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight>
+            <AbsValue val="14" />
+          </FontHeight>
+          <Color r="1" g="1" b="1" />
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset x="1" y="-1" />
+          </Shadow>
+        </FontString>
+      </EditBox>
+
+<!--Текст "Шепнуть"-->
+      <Frame name="$parentComponent7">
+        <Size x="80" y="25" />
+        <Anchors>
+          <Anchor point="TOPLEFT" x="204" y="-111" />
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="Шепнуть:">
+              <Anchors>
+                <Anchor point="TOPLEFT" x="9" y="0"/>
+                <Anchor point="BOTTOMRIGHT" x="9" y="0"/>
+              </Anchors>
+              <FontHeight val="12" />
+              <Color r="1" g="0.8196079" b="0" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset x="1" y="-1" />
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+
+<!--Выпадающий список-->
+	    <Button name="DropDownMenu" inherits="UIDropDownMenuTemplate">
+	    	<Scripts>
+	    		<OnLoad>
+            UIDropDownMenu_SetButtonWidth(self, 157);
+            UIDropDownMenu_SetWidth(self, 157)
+            UIDropDownMenu_SetText(self, "История сообщений:")
+            UIDropDownMenu_JustifyText(self, "LEFT") 
+		    		UIDropDownMenu_Initialize(self, init_DropDownMenu)
+		    	</OnLoad>
+	    	</Scripts>
+	    	<Anchors>
+			    <Anchor point="TOPLEFT" x="10" y="-139"/>
+		    </Anchors>
+	    </Button>
+
+<!--Текст "LFG"-->
+      <Frame name="lfgText">
+        <Size x="103" y="25" />
+        <Anchors>
+          <Anchor point="TOPLEFT" x="217" y="-142" />
+        </Anchors>
+        <Layers>
+          <Layer>
+            <FontString font="Fonts\FRIZQT__.TTF" text="LFG:">
+              <Anchors>
+                <Anchor point="TOPLEFT" />
+                <Anchor point="BOTTOMRIGHT" />
+              </Anchors>
+              <FontHeight val="12" />
+              <Color r="1" g="0.8196079" b="0" />
+              <Shadow>
+                <Color r="0" g="0" b="0" />
+                <Offset x="1" y="-1" />
+              </Shadow>
+            </FontString>
+          </Layer>
+        </Layers>
+      </Frame>
+
+<!--Переключатель "LFG"-->
+      <CheckButton name="lfgSpam" inherits="OptionsCheckButtonTemplate" checked="false">
+	      <Anchors>
+		      <Anchor point="TOPLEFT" x="285" y="-141"/>
+        </Anchors>
+      </CheckButton>
 
 <!--Текст "Спам"-->
       <Frame name="$parentComponent1">
@@ -200,6 +310,131 @@
         </Layers>
       </Frame>
 
+<!--Поле "Текст сообщения 1"-->
+      <EditBox name="spamtext1" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="255">
+        <Size x="310" y="25"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" x="55" y="-190" />
+        </Anchors>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight val="14"/>
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="$parentLeft" x="10" y="10"/>
+          </Anchors>
+          <Color r="1" g="1" b="1"/>
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset x="1" y="-1"/>
+          </Shadow>
+        </FontString>
+      </EditBox>
+
+<!--Переключатель "Сообщение 1"-->
+      <CheckButton name="spamcheck1" inherits="OptionsCheckButtonTemplate" checked="false">
+	      <Anchors>
+		      <Anchor point="TOPLEFT" x="19" y="-190"/>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            if self:GetChecked() then
+              if spamtext1:HasFocus() then saveToDB(spamtext1:GetText()) else 
+                print("|cffFF4500The Spammer:|r Установите курсор в соответствующее поле и попробуйте ещё раз")
+              end
+            end
+          </OnClick>
+        </Scripts>
+      </CheckButton>
+
+<!--Поле "Текст сообщения 2"-->
+      <EditBox name="spamtext2" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="255">
+        <Size x="310" y="25"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" x="55" y="-218" />
+        </Anchors>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight val="14"/>
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="$parentLeft" x="10" y="10"/>
+          </Anchors>
+          <Color r="1" g="1" b="1"/>
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset x="1" y="-1"/>
+          </Shadow>
+        </FontString>
+      </EditBox>
+
+<!--Переключатель "Сообщение 2"-->
+      <CheckButton name="spamcheck2" inherits="OptionsCheckButtonTemplate" checked="false">
+	      <Anchors>
+		      <Anchor point="TOPLEFT" x="19" y="-218"/>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            if self:GetChecked() then
+              if spamtext2:HasFocus() then saveToDB(spamtext2:GetText()) else 
+                print("|cffFF4500The Spammer:|r Установите курсор в соответствующее поле и попробуйте ещё раз")
+              end
+            end
+          </OnClick>
+        </Scripts>
+      </CheckButton>
+
+<!--Поле "Текст сообщения 3"-->
+      <EditBox name="spamtext3" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="255">
+        <Size x="310" y="25"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" x="55" y="-246" />
+        </Anchors>
+        <FontString font="Fonts\ARIALN.TTF">
+          <FontHeight val="14"/>
+          <Anchors>
+            <Anchor point="TOPLEFT" relativeTo="$parentLeft" x="10" y="10"/>
+          </Anchors>
+          <Color r="1" g="1" b="1"/>
+          <Shadow>
+            <Color r="0" g="0" b="0" />
+            <Offset x="1" y="-1"/>
+          </Shadow>
+        </FontString>
+      </EditBox>
+
+<!--Переключатель "Сообщение 3"-->
+      <CheckButton name="spamcheck3" inherits="OptionsCheckButtonTemplate" checked="false">
+	      <Anchors>
+		      <Anchor point="TOPLEFT" x="19" y="-246"/>
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            if self:GetChecked() then
+              if spamtext3:HasFocus() then saveToDB(spamtext3:GetText()) else 
+                print("|cffFF4500The Spammer:|r Установите курсор в соответствующее поле и попробуйте ещё раз")
+              end
+            end
+          </OnClick>
+        </Scripts>
+      </CheckButton>
+
+<!--Кнопка "Очистить базу"-->
+      <Button name="dropBase" inherits="UIPanelButtonTemplate" text="Очистить историю">
+        <Size x="130" y="25" />
+        <Anchors>
+          <Anchor point="TOPLEFT" x="21" y="-281" />
+        </Anchors>
+        <Scripts>
+          <OnClick>
+            mesDB = {}
+            print("|cffFF4500The Spammer:|r История сообщений очищена") 
+          </OnClick>
+        </Scripts>
+        <NormalFont inherits="GameFontNormal" font="Fonts\FRIZQT__.TTF">
+          <FontHeight val="12" />
+        </NormalFont>
+        <HighlightFont inherits="GameFontHighlight" font="Fonts\FRIZQT__.TTF">
+          <FontHeight val="12" />
+        </HighlightFont>
+      </Button>
+
 <!--Кнопка "Спам"-->
       <Button name="$parentComponent10" inherits="UIPanelButtonTemplate" text="СПАМ!">
         <Size x="76" y="25" />
@@ -218,105 +453,6 @@
           <FontHeight val="12" />
         </HighlightFont>
       </Button>
-
-<!--Текст "Повторения"-->
-      <Frame name="$parentComponent2">
-        <Size x="80" y="25" />
-        <Anchors>
-          <Anchor point="TOPLEFT" x="204" y="-92" />
-        </Anchors>
-        <Layers>
-          <Layer>
-            <FontString name="$parentLabel" inherits="GameFontNormal" font="Fonts\FRIZQT__.TTF" text="Повторения:">
-              <Anchors>
-                <Anchor point="TOPLEFT" x="0" y="0"/>
-                <Anchor point="BOTTOMRIGHT" x="0" y="0"/>
-              </Anchors>
-              <FontHeight val="12" />
-            </FontString>
-          </Layer>
-        </Layers>
-      </Frame>
-
-<!--Поле "Повторения"-->
-      <EditBox name="spamrecurrences" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" numeric="true" letters="9">
-        <Size x="68" y="25"/>
-        <Anchors>
-          <Anchor point="TOPLEFT" x="293" y="-92" />
-        </Anchors>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight val="14" />
-          <Color r="1" g="1" b="1" />
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset x="1" y="-1" />
-          </Shadow>
-        </FontString>
-      </EditBox>
-
-<!--Текст "№ канала"-->
-      <Frame name="$parentComponent5">
-        <Size x="103" y="25" />
-        <Anchors>
-          <Anchor point="TOPLEFT" x="42" y="-119" />
-        </Anchors>
-        <Layers>
-          <Layer>
-            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="№ канала:">
-              <Anchors>
-                <Anchor point="TOPLEFT" />
-                <Anchor point="BOTTOMRIGHT" />
-              </Anchors>
-              <FontHeight val="12" />
-              <Color r="1" g="0.8196079" b="0" />
-              <Shadow>
-                <Color r="0" g="0" b="0" />
-                <Offset x="1" y="-1" />
-              </Shadow>
-            </FontString>
-          </Layer>
-        </Layers>
-      </Frame>
-
-<!--Поле "№ канала"-->
-      <EditBox name="spamchannel"  inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" numeric="true" letters="9">
-        <Size x="68" y="25" />
-        <Anchors>
-          <Anchor point="TOPLEFT" x="134" y="-119" />
-        </Anchors>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight val="14" />
-          <Color r="1" g="1" b="1" />
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset x="1" y="-1" />
-          </Shadow>
-        </FontString>
-      </EditBox>
-
-<!--Текст описание-->
-      <Frame name="$parentComponent3">
-        <Size x="341" y="36" />
-        <Anchors>
-          <Anchor point="TOPLEFT" x="24" y="-43" />
-        </Anchors>
-        <Layers>
-          <Layer>
-            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="Автоматически отправляет сообщения в выбраный канал, /s или в ЛС. Оставьте поле &quot;№ канала:&quot; пустым, чтобы писать в /s чат.">
-              <Anchors>
-                <Anchor point="TOPLEFT" />
-                <Anchor point="BOTTOMRIGHT" />
-              </Anchors>
-              <FontHeight val="12" />
-              <Color r="1" g="0.8196079" b="0" />
-              <Shadow>
-                <Color r="0" g="0" b="0" />
-                <Offset x="1" y="-1" />
-              </Shadow>
-            </FontString>
-          </Layer>
-        </Layers>
-      </Frame>
 
 <!--Кнопка "Стоп"-->
       <Button name="$parentComponent4" inherits="UIPanelButtonTemplate" text="STOP">
@@ -337,79 +473,6 @@
         </HighlightFont>
       </Button>
 
-<!--Поле "Шепнуть"-->
-      <EditBox name="whisperspam" inherits="InputBoxTemplate" enableMouse="true" autoFocus="false" letters="12">
-        <Size x="68" y="25" />
-        <Anchors>
-          <Anchor point="TOPLEFT" x="293" y="-119" />
-        </Anchors>
-        <FontString font="Fonts\ARIALN.TTF">
-          <FontHeight>
-            <AbsValue val="14" />
-          </FontHeight>
-          <Color r="1" g="1" b="1" />
-          <Shadow>
-            <Color r="0" g="0" b="0" />
-            <Offset x="1" y="-1" />
-          </Shadow>
-        </FontString>
-      </EditBox>
-
-<!--Текст "Шепнуть"-->
-      <Frame name="$parentComponent7">
-        <Size x="80" y="25" />
-        <Anchors>
-          <Anchor point="TOPLEFT" x="204" y="-119" />
-        </Anchors>
-        <Layers>
-          <Layer>
-            <FontString name="$parentLabel" font="Fonts\FRIZQT__.TTF" text="Шепнуть:">
-              <Anchors>
-                <Anchor point="TOPLEFT" x="9" y="0"/>
-                <Anchor point="BOTTOMRIGHT" x="9" y="0"/>
-              </Anchors>
-              <FontHeight val="12" />
-              <Color r="1" g="0.8196079" b="0" />
-              <Shadow>
-                <Color r="0" g="0" b="0" />
-                <Offset x="1" y="-1" />
-              </Shadow>
-            </FontString>
-          </Layer>
-        </Layers>
-      </Frame>
-
-<!--Переключатель "LFG"-->
-      <CheckButton name="lfgSpam" inherits="OptionsCheckButtonTemplate" checked="false">
-	      <Anchors>
-		      <Anchor point="TOPLEFT" x="125" y="-146"/>
-        </Anchors>
-      </CheckButton>
-
-<!--Текст "LFG"-->
-      <Frame name="lfgText">
-        <Size x="103" y="25" />
-        <Anchors>
-          <Anchor point="TOPLEFT" x="60" y="-146" />
-        </Anchors>
-        <Layers>
-          <Layer>
-            <FontString font="Fonts\FRIZQT__.TTF" text="LFG:">
-              <Anchors>
-                <Anchor point="TOPLEFT" />
-                <Anchor point="BOTTOMRIGHT" />
-              </Anchors>
-              <FontHeight val="12" />
-              <Color r="1" g="0.8196079" b="0" />
-              <Shadow>
-                <Color r="0" g="0" b="0" />
-                <Offset x="1" y="-1" />
-              </Shadow>
-            </FontString>
-          </Layer>
-        </Layers>
-      </Frame>
-
 <!--Кнопка "Закрыть"-->
       <Button name="$parentComponent6" inherits="UIPanelCloseButton">
         <Size x="28" y="28" />
@@ -417,7 +480,7 @@
           <Anchor point="TOPRIGHT" x="-7" y="-7" />
         </Anchors>
         <Scripts>
-          <OnClick>
+          <OnClick> 
             TheSpammer:Hide();
           </OnClick>
         </Scripts>

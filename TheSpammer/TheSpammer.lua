@@ -1,12 +1,53 @@
 ﻿--Made by H3llf!re (Deathsoft.com)
 --Code reviewed, refactored and completed by Manik (Sirus.su)
+
+mesDB = {}  
+
+function init_DropDownMenu()
+
+    if #mesDB < 1 then print("|cffFF4500The Spammer:|r Сообщений в базе не найдено") else
+        for i = 1, #mesDB do
+            mesDB[i].func = onSelect_DropDownMenu 
+            UIDropDownMenu_AddButton(mesDB[i])
+        end
+    end
+end
+
+function saveToDB(temp)
+
+    local mesDB_info = UIDropDownMenu_CreateInfo();
+    
+    match = false
+    for i=1, #mesDB do
+        if temp == mesDB[i].value then 
+            match = true 
+            break
+        end
+    end
+
+    if not match and temp ~= "" then 
+        mesDB_info = {text=temp, value = temp, notCheckable = 1}
+        tinsert(mesDB, mesDB_info)
+        print("|cffFF4500The Spammer:|r Запись сохранена") 
+    else 
+        print("|cffFF4500The Spammer:|r Запись уже существует")    
+    end
+end
+
+function onSelect_DropDownMenu(self)
+
+    if spamtext1:HasFocus() then spamtext1:SetText(self.value) end
+    if spamtext2:HasFocus() then spamtext2:SetText(self.value) end 
+    if spamtext3:HasFocus() then spamtext3:SetText(self.value) end
+end
         
 function TheSpammerMenuToggle()
+
     if ( TheSpammer:IsVisible() ) then
 	    	HideUIPanel(TheSpammer)
 		else
 			ShowUIPanel(TheSpammer)
-	end
+    end
 end
 
 SlashCmdList["THESPAMMERMENUT"] = TheSpammerMenuToggle;
@@ -18,30 +59,34 @@ SLASH_THESPAMMERMENUT4 = "/ts";
 AutospammerON=0
 
 function timerbot_callback()
+
     if AutospammerON==1 then
         autospamwithtime_callback()
     end
 end
 
 function AutomsgspammerON()
+
     if AutospammerON==0 then
         AutospammerON=1
-        ChatFrame1:AddMessage("|cffFF4500The |cff404040Spammer|r:\124cffFF4500 is now running")
+        ChatFrame1:AddMessage("|cffFF4500The Spammer:|r Запущен!")
     else 
-        ChatFrame1:AddMessage("|cffFF4500The |cff404040Spammer|r:\124cffFF4500 is still running")    
+        ChatFrame1:AddMessage("|cffFF4500The Spammer:|r Работа выполняется")    
     end
 end
 
 function AutomsgspammerOFF()
+
     if AutospammerON==1 then
         AutospammerON=0
-        ChatFrame1:AddMessage("|cffFF4500The |cff404040Spammer|r:\124cffFF4500 is now stopped")
+        ChatFrame1:AddMessage("|cffFF4500The Spammer:|r Остановлен")
         autospamwithtimestop();
     end
 end
 
     
 function autospamwithtimestop()
+
     rrecounter = 0
 end
     
@@ -52,10 +97,10 @@ function lfgMessage (name)
             autospamchannel = id; break
         end 
     end
-
 end
 
 function logicFunc(autospamchannel, autowhisperspam, autospamtext, rrecounter)
+
     if (autospamchannel>0) and (autowhisperspam=="") and not (autospamtext=="") then 
         SendChatMessage(""..autospamtext.."", "CHANNEL", GetDefaultLanguage("Player"), ""..autospamchannel.."");
         timestampautospam = currentautospam_time;
@@ -73,15 +118,15 @@ function logicFunc(autospamchannel, autowhisperspam, autospamtext, rrecounter)
 
         --Error messages:    
     elseif (autospamtext=="") then
-        UIErrorsFrame:AddMessage("|cffFF4500The |cff404040Spammer|r:\124cffFF4500 You must enter some text!")
+        UIErrorsFrame:AddMessage("|cffFF4500The Spammer:|r You must enter some text!")
         timestampautospam = currentautospam_time;
     
     elseif (autospamchannel>0) and not (autowhisperspam=="") then
-        UIErrorsFrame:AddMessage("|cffFF4500The |cff404040Spammer|r:\124cffFF4500 You must choose between Channel and Whisper!")
+        UIErrorsFrame:AddMessage("|cffFF4500The Spammer:|r Отправить сообщение в выбранный канал ИЛИ отправить личное сообщение")
         timestampautospam = currentautospam_time;
     
     elseif (autospamchannel=="") and (autowhisperspam=="") then
-        UIErrorsFrame:AddMessage("|cffFF4500The |cff404040Spammer|r:\124cffFF4500 You must choose between Channel and Whisper!")
+        UIErrorsFrame:AddMessage("|cffFF4500The Spammer:|r You must choose between Channel and Whisper!")
         timestampautospam = currentautospam_time;
     end
 end
@@ -90,6 +135,7 @@ timestampautospam = time();
 rrecounter = 0
 
 function autospamwithtime_callback()
+
     autospamtext_1 = spamtext1:GetText();
     autospamtext_2 = spamtext2:GetText();
     autospamtext_3 = spamtext3:GetText();
@@ -121,10 +167,9 @@ function autospamwithtime_callback()
             logicFunc(autospamchannel, autowhisperspam, autospamtext_3, rrecounter) 
         end
     end
-
 end
 
 function autospamwithtimestop()
+
     rrecounter = 0
 end
-    
