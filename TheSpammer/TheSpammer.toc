@@ -7,6 +7,7 @@
 ## URL: Deathsoft.com
 ## DefaultState: Enabled
 ## LoadOnDemand: 0
+## SavedVariables: mesDB
 
 TheSpammer.lua
 TheSpammerMenu.xml
